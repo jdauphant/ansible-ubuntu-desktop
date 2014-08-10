@@ -1,0 +1,36 @@
+[submodule "roles/gnome-shell"]
+	path = roles/gnome-shell
+	url = git@github.com:jdauphant/ansible-role-gnome-shell.git
+[submodule "roles/packerio"]
+	path = roles/packerio
+	url = git@github.com:jdauphant/ansible-role-packerio.git
+[submodule "roles/java"]
+	path = roles/java
+	url = git@github.com:jdauphant/ansible-role-java.git
+[submodule "roles/lang"]
+	path = roles/lang
+	url = git@github.com:jdauphant/ansible-role-lang.git
+[submodule "roles/packaging"]
+	path = roles/packaging
+	url = git@github.com:jdauphant/ansible-role-packaging.git
+[submodule "roles/sudo"]
+	path = roles/sudo
+	url = git@github.com:jdauphant/ansible-role-sudo.git
+[submodule "roles/vagrant"]
+	path = roles/vagrant
+	url = git@github.com:jdauphant/ansible-role-vagrant.git
+[submodule "roles/sublimetext"]
+	path = roles/sublimetext
+	url = git@github.com:jdauphant/ansible-role-sublimetext.git
+[submodule "roles/spotify"]
+	path = roles/spotify
+	url = git@github.com:jdauphant/ansible-role-spotify.git
+[submodule "roles/ufw"]
+	path = roles/ufw
+	url = git@github.com:jdauphant/ansible-role-ufw.git
+[submodule "roles/ansible"]
+	path = roles/ansible
+	url = git@github.com:jdauphant/ansible-role-ansible.git
+[submodule "roles/timezone"]
+	path = roles/timezone
+	url = git@github.com:jdauphant/ansible-role-timezone.git

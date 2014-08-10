@@ -1,0 +1,116 @@
+---
+ - hosts: all
+   pre_tasks:
+    - name: Ensure apt cache is up to date
+      apt: cache_valid_time=3600 update_cache=yes
+      tags: [packages,update]
+   vars:
+     cleanup_days: 14
+     language: "en_US"
+     lang: "{{language}}.UTF-8"
+     timezone: "Europe/Paris"
+     ansible_pkg_state: latest
+     packaging_packages:
+       - zsh
+       - vim
+       - curl
+       - unzip
+# dev
+       - ipython
+       - git
+       - mercurial
+       - tig
+       - openjdk-7-jdk 
+       - maven
+       - python-setuptools
+       - less
+       - maven
+       - build-essential
+       - g++
+       - nodejs
+       - nodejs-dev
+       - valgrind
+# admin
+       - openssh-server
+       - nmap
+       - htop
+       - tree
+       - iotop
+       - sysstat
+       - screen
+       - tmux
+       - openvpn
+       - inetutils-traceroute
+       - sshfs
+       - vde2
+       - cryptsetup
+       - traceroute
+       - powertop
+       - aptitude
+       - aircrack-ng
+       - autofs
+       - ecryptfs-utils
+       - lm-sensors
+       - gpm
+       - ntfs-3g
+   roles :
+    - timezone
+    - lang  
+    - role: ufw
+      ufw_whitelisted_ports:
+          - { port: 22,  protocol: tcp }
+    - packaging
+    - java
+    - role: sudo
+      sudo_files:
+         - name: vpn-user
+           vars:
+             - "%vpn-user ALL=NOPASSWD: /usr/sbin/openvpn"
+#UI
+    - gnome-shell
+    - role: packaging
+      packaging_packages:
+       - keepassx
+       - xchat
+       - irssi
+       - gitg
+       - virtualbox
+       - qemu
+       - chromium-browser
+       - nautilus-open-terminal
+       - terminator
+       - skype
+       - firefox
+       - vlc
+       - audacity
+       - geany
+       - filezilla
+       - libreoffice
+       - baobab
+       - thunderbird
+       - golang-go
+       - gparted
+       - remmina
+       - playonlinux
+       - qtcreator
+       - qt-sdk
+       - quicksynergy
+       - simple-scan
+       - usb-creator-gtk
+       - virt-manager
+       - wireshark
+    - packerio
+    - ansible
+    - vagrant
+    - sublimetext
+   tasks :
+    - name: Ensure ~/Downloads is daily cleanup
+      cron: name="Cleanup ~/Downloads folder" special_time=daily user="{{ansible_env.SUDO_USER|default(ansible_user_id)}}" job="find ~/Downloads/ -mtime +{{cleanup_days}} -exec trash '{}' \;"
+      sudo: no
+    - name: Ensure marks existe
+      cron: copy=marks.sh dest=/etc/profile.d/marks.sh 
+    - name: Install python apps
+      pip: name={{item}}
+      with_items: 
+        - awscli
+        - virtualenv
