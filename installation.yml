@@ -10,6 +10,8 @@
      lang: "{{language}}.UTF-8"
      timezone: "Europe/Paris"
      ansible_pkg_state: latest
+     packaging_ubuntu_extras_repository: true
+     packaging_ubuntu_partner_repository: true
      packaging_packages:
        - zsh
        - vim
@@ -107,8 +109,8 @@
     - name: Ensure ~/Downloads is daily cleanup
       cron: name="Cleanup ~/Downloads folder" special_time=daily user="{{ansible_env.SUDO_USER|default(ansible_user_id)}}" job="find ~/Downloads/ -mtime +{{cleanup_days}} -exec trash '{}' \;"
       sudo: no
-    - name: Ensure marks existe
-      cron: copy=marks.sh dest=/etc/profile.d/marks.sh 
+    - name: Ensure marks exist
+      copy: src=files/marks.sh dest=/etc/profile.d/marks.sh 
     - name: Install python apps
       pip: name={{item}}
       with_items: 
