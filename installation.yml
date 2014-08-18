@@ -119,3 +119,4 @@
       with_items: 
         - awscli
         - virtualenv
+ - include: patchs/patch-grub-lvm/patch-grub-lvm.yml

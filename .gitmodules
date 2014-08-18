@@ -34,3 +34,6 @@
 [submodule "roles/timezone"]
 	path = roles/timezone
 	url = git@github.com:jdauphant/ansible-role-timezone.git
+[submodule "patchs/patch-grub-lvm"]
+	path = patchs/patch-grub-lvm
+	url = git@github.com:jdauphant/patch-grub-lvm.git
