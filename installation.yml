@@ -58,7 +58,8 @@
        - lm-sensors
        - gpm
        - ntfs-3g
-   roles :
+       - whois
+   roles:
     - timezone
     - lang  
     - role: ufw
@@ -104,6 +105,7 @@
        - usb-creator-gtk
        - virt-manager
        - wireshark
+       - synergy
     - packerio
     - ansible
     - vagrant
