@@ -111,6 +111,9 @@
     - vagrant
     - sublimetext
     - spotify
+    - role: brother
+      brother_printers_to_install:
+        - DCP-375CW
    tasks :
     - name: Ensure ~/Downloads is daily cleanup
       cron: name="Cleanup ~/Downloads folder" special_time=daily user="{{ansible_env.SUDO_USER|default(ansible_user_id)}}" job="find ~/Downloads/ -mtime +{{cleanup_days}} -exec trash '{}' \;"

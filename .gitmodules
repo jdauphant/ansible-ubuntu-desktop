@@ -37,3 +37,6 @@
 [submodule "patchs/patch-grub-lvm"]
 	path = patchs/patch-grub-lvm
 	url = git@github.com:jdauphant/patch-grub-lvm.git
+[submodule "roles/brother"]
+	path = roles/brother
+	url = git@github.com:jdauphant/ansible-role-brother.git
