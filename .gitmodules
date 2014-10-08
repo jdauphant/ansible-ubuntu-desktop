@@ -46,3 +46,9 @@
 [submodule "roles/users"]
 	path = roles/users
 	url = git@github.com:jdauphant/ansible-role-users.git
+[submodule "roles/hangout"]
+	path = roles/hangout
+	url = github.com:jdauphant/ansible-role-hangout.git
+[submodule "roles/dell-printers"]
+	path = roles/dell-printers
+	url = git@github.com:jdauphant/ansible-role-dell-printers.git
