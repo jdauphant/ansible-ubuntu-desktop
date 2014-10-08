@@ -20,6 +20,7 @@
        - vim
        - curl
        - unzip
+       - icedtea-plugin
 # dev
        - ipython
        - git
@@ -73,7 +74,9 @@
            vars:
              - "%vpn-user ALL=NOPASSWD: /usr/sbin/openvpn"
 #UI
-    - gnome-shell
+    - role: gnome-shell
+      gnome_with_ppa_staging: true
+      gnome_shell_pkg_state: latest
     - role: packaging
       packaging_packages:
        - keepassx
@@ -106,18 +109,31 @@
        - virt-manager
        - wireshark
        - synergy
+       - gimp
+    - role: users
+      users_groups:
+         - name: "vpn-user"
+           gid: 1500
     - packerio
     - ansible
     - vagrant
     - sublimetext
     - spotify
+    - dropbox
+    - hangout
     - role: brother
-      brother_printers_to_install:
-        - DCP-375CW
+      brother_printers_to_install: ['DCP-375CW']
    tasks :
+    - name: Ensure NPM is installed
+      apt: pkg=npm
+      tags: trash
+    - name: Ensure trash is installed
+      npm: name=trash global=yes
+      tags: trash
     - name: Ensure ~/Downloads is daily cleanup
       cron: name="Cleanup ~/Downloads folder" special_time=daily user="{{ansible_env.SUDO_USER|default(ansible_user_id)}}" job="find ~/Downloads/ -mtime +{{cleanup_days}} -exec trash '{}' \;"
       sudo: no
+      tags: trash
 #    - name: Ensure marks exist
 #      copy: src=files/marks.sh dest=/etc/profile.d/marks.sh 
     - name: Install python apps
@@ -125,4 +141,5 @@
       with_items: 
         - awscli
         - virtualenv
+        - google-api-python-client
  - include: patchs/patch-grub-lvm/patch-grub-lvm.yml

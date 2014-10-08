@@ -40,3 +40,9 @@
 [submodule "roles/brother"]
 	path = roles/brother
 	url = git@github.com:jdauphant/ansible-role-brother.git
+[submodule "roles/dropbox"]
+	path = roles/dropbox
+	url = git@github.com:jdauphant/ansible-role-dropbox.git
+[submodule "roles/users"]
+	path = roles/users
+	url = git@github.com:jdauphant/ansible-role-users.git
