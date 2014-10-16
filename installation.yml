@@ -60,6 +60,7 @@
        - gpm
        - ntfs-3g
        - whois
+       - dstat
    roles:
     - timezone
     - lang  
@@ -145,3 +146,4 @@
         - virtualenv
         - google-api-python-client
  - include: patchs/patch-grub-lvm/patch-grub-lvm.yml
+ - include: patchs/ssl3-poodle/patch-ssl3-poodle.yml

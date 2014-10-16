@@ -52,3 +52,6 @@
 [submodule "roles/dell-printers"]
 	path = roles/dell-printers
 	url = git@github.com:jdauphant/ansible-role-dell-printers.git
+[submodule "patchs/ssl3-poodle"]
+	path = patchs/ssl3-poodle
+	url = git@github.com:jdauphant/ansible-patch-ssl3-poodle.git
