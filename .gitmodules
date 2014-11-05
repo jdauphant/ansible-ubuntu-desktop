@@ -58,3 +58,6 @@
 [submodule "roles/vmware-workstation"]
 	path = roles/vmware-workstation
 	url = git@github.com:jdauphant/ansible-role-vmware-workstation.git
+[submodule "roles/atom"]
+	path = roles/atom
+	url = git@github.com:jdauphant/ansible-role-atom.git
