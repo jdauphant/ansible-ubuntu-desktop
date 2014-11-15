@@ -1,5 +1,11 @@
 ---
  - hosts: all
+   pre_task:
+    - name: ensure folder exist to install icedtea-plugin
+      file: state=directory path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/{{item}}
+      with_items:
+        - javaws
+        - itweb-settings
    post_tasks:
     - name: Ensure apt cache is up to date
       apt: cache_valid_time=3600 update_cache=yes
@@ -125,6 +131,7 @@
     - dropbox
     - hangout
     - atom
+    - docker
     - role: brother
       brother_printers_to_install: ['DCP-375CW']
     - role: dell-printers

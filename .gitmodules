@@ -61,3 +61,6 @@
 [submodule "roles/atom"]
 	path = roles/atom
 	url = git@github.com:jdauphant/ansible-role-atom.git
+[submodule "roles/docker"]
+	path = roles/docker
+	url = git@github.com:jdauphant/ansible-role-docker.git
