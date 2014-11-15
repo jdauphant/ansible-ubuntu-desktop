@@ -93,6 +93,7 @@
        - virtualbox
        - qemu
        - chromium-browser
+       - pepperflashplugin-nonfree
        - nautilus-open-terminal
        - terminator
        - skype
