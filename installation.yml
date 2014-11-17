@@ -21,6 +21,7 @@
      ansible_pkg_state: latest
      packaging_ubuntu_extras_repository: true
      packaging_ubuntu_partner_repository: true
+     packaging_ubuntu_multiverse_repository: true
      packaging_packages:
        - zsh
        - vim
