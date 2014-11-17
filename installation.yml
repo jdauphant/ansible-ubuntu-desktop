@@ -1,6 +1,6 @@
 ---
  - hosts: all
-   pre_task:
+   pre_tasks:
     - name: ensure folder exist to install icedtea-plugin
       file: state=directory path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/{{item}}
       with_items:
