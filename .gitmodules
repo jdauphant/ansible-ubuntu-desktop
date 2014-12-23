@@ -64,3 +64,9 @@
 [submodule "roles/docker"]
 	path = roles/docker
 	url = git@github.com:jdauphant/ansible-role-docker.git
+[submodule "roles/scala"]
+	path = roles/scala
+	url = git@github.com:jdauphant/ansible-role-scala.git
+[submodule "roles/intellij"]
+	path = roles/intellij
+	url = git@github.com:jdauphant/ansible-role-intellij.git

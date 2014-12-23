@@ -68,6 +68,9 @@
        - ntfs-3g
        - whois
        - dstat
+       - iftop
+       - nload
+       - speedometer
    roles:
     - timezone
     - lang  
@@ -76,6 +79,7 @@
           - { port: 22,  protocol: tcp }
     - packaging
     - java
+    - scala
     - role: sudo
       sudo_files:
          - name: vpn-user
@@ -128,6 +132,7 @@
     - packerio
     - ansible
     - vagrant
+    - intellij
     - sublimetext
     - spotify
     - dropbox
