@@ -43,6 +43,10 @@
        - nodejs
        - nodejs-dev
        - valgrind
+       - graphviz
+       - protobuf-compiler
+       - rubygems
+       - ruby-dev
 # admin
        - openssh-server
        - nmap
@@ -71,6 +75,7 @@
        - iftop
        - nload
        - speedometer
+       - nodejs-legacy
    roles:
     - timezone
     - lang  
@@ -141,8 +146,6 @@
     - docker
     - role: brother
       brother_printers_to_install: ['DCP-375CW']
-    - role: dell-printers
-      dell_printers_to_install: ["Dell-2150-Color"]
    tasks :
     - name: Ensure NPM is installed
       apt: pkg=npm
@@ -162,5 +165,10 @@
         - awscli
         - virtualenv
         - google-api-python-client
+        - autoenv
+    - name: Install ruby apps
+      gem: name={{item}}
+      with_items:
+        - travis 
  - include: patchs/patch-grub-lvm/patch-grub-lvm.yml
  - include: patchs/ssl3-poodle/patch-ssl3-poodle.yml
