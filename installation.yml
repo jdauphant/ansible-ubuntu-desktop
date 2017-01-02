@@ -86,7 +86,9 @@
          to_port: 22
          protocol: tcp
     - packaging
-    - java
+    - role: java
+      java_packages:
+        - oracle-java8-installer
     - scala
     - role: sudo
       sudo_files:
