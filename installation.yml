@@ -1,11 +1,5 @@
 ---
  - hosts: all
-   pre_tasks:
-    - name: ensure folder exist to install icedtea-plugin
-      file: state=directory path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/{{item}}
-      with_items:
-        - javaws
-        - itweb-settings
    post_tasks:
     - name: Ensure apt cache is up to date
       apt: cache_valid_time=3600 update_cache=yes
@@ -14,7 +8,7 @@
       apt: upgrade=safe
       tags: [packages,update]
    vars:
-     cleanup_days: 14
+     cleanup_days: 30
      language: "en_US"
      lang: "{{language}}.UTF-8"
      timezone: "Europe/Paris"
@@ -31,10 +25,7 @@
 # dev
        - ipython
        - git
-       - mercurial
        - tig
-       - openjdk-7-jdk 
-       - maven
        - python-setuptools
        - less
        - maven
@@ -65,11 +56,11 @@
        - powertop
        - aptitude
        - aircrack-ng
+       - dns2tcp
        - autofs
        - ecryptfs-utils
        - lm-sensors
        - gpm
-       - ntfs-3g
        - whois
        - dstat
        - iftop
@@ -96,34 +87,25 @@
            vars:
              - "%vpn-user ALL=NOPASSWD: /usr/sbin/openvpn"
 #UI
-    - role: gnome-shell
-      gnome_with_ppa_staging: true
-      gnome_shell_pkg_state: latest
     - role: packaging
       packaging_packages:
        - keepassx
-       - xchat
-       - irssi
        - gitg
        - virtualbox
        - qemu
        - chromium-browser
-       - pepperflashplugin-nonfree
        - nautilus-open-terminal
        - terminator
        - skype
        - firefox
        - vlc
        - audacity
-       - geany
        - filezilla
        - libreoffice
        - baobab
-       - thunderbird
        - golang-go
        - gparted
        - remmina
-       - playonlinux
        - qtcreator
        - qt-sdk
        - quicksynergy
@@ -133,8 +115,6 @@
        - wireshark
        - synergy
        - gimp
-       - pidgin
-       - pidgin-otr
     - role: users
       users_groups:
          - name: "vpn-user"
@@ -145,10 +125,11 @@
     - intellij
     - sublimetext
     - spotify
+    - slack
     - dropbox
     - hangout
-    - atom
     - docker
+    - visual-studio-code
     - role: brother
       brother_printers_to_install: ['DCP-375CW']
    tasks :
@@ -167,13 +148,9 @@
     - name: Install python apps
       pip: name={{item}}
       with_items: 
-        - awscli
         - virtualenv
-        - google-api-python-client
         - autoenv
     - name: Install ruby apps
       gem: name={{item}}
       with_items:
-        - travis 
- - include: patchs/patch-grub-lvm/patch-grub-lvm.yml
- - include: patchs/ssl3-poodle/patch-ssl3-poodle.yml
+        - travis

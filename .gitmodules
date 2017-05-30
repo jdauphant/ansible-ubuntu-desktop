@@ -34,9 +34,6 @@
 [submodule "roles/timezone"]
 	path = roles/timezone
 	url = git@github.com:jdauphant/ansible-role-timezone.git
-[submodule "patchs/patch-grub-lvm"]
-	path = patchs/patch-grub-lvm
-	url = git@github.com:jdauphant/patch-grub-lvm.git
 [submodule "roles/brother"]
 	path = roles/brother
 	url = git@github.com:jdauphant/ansible-role-brother.git
@@ -52,9 +49,6 @@
 [submodule "roles/dell-printers"]
 	path = roles/dell-printers
 	url = git@github.com:jdauphant/ansible-role-dell-printers.git
-[submodule "patchs/ssl3-poodle"]
-	path = patchs/ssl3-poodle
-	url = git@github.com:jdauphant/ansible-patch-ssl3-poodle.git
 [submodule "roles/vmware-workstation"]
 	path = roles/vmware-workstation
 	url = git@github.com:jdauphant/ansible-role-vmware-workstation.git
@@ -70,3 +64,9 @@
 [submodule "roles/intellij"]
 	path = roles/intellij
 	url = git@github.com:jdauphant/ansible-role-intellij.git
+[submodule "roles/slack"]
+	path = roles/slack
+	url = git@github.com:jdauphant/ansible-role-slack.git
+[submodule "roles/visual-studio-code"]
+	path = roles/visual-studio-code
+	url = git@github.com:jdauphant/ansible-role-visual-studio-code.git
