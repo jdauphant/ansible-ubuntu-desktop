@@ -1,6 +1,3 @@
-[submodule "roles/gnome-shell"]
-	path = roles/gnome-shell
-	url = git@github.com:jdauphant/ansible-role-gnome-shell.git
 [submodule "roles/packerio"]
 	path = roles/packerio
 	url = git@github.com:jdauphant/ansible-role-packerio.git
