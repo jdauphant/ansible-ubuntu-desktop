@@ -78,8 +78,7 @@
          protocol: tcp
     - packaging
     - role: java
-      java_packages:
-        - oracle-java8-installer
+      java_oracle_distribution: jdk
     - scala
     - role: sudo
       sudo_files:
