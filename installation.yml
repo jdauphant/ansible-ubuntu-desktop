@@ -113,7 +113,6 @@
       users_groups:
          - name: "vpn-user"
            gid: 1500
-    - packerio
     - ansible
     - vagrant
     - intellij
