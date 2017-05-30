@@ -92,7 +92,6 @@
        - virtualbox
        - qemu
        - chromium-browser
-       - nautilus-open-terminal
        - terminator
        - skype
        - firefox
