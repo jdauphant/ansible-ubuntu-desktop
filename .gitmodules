@@ -10,9 +10,6 @@
 [submodule "roles/vagrant"]
 	path = roles/vagrant
 	url = git@github.com:jdauphant/ansible-role-vagrant.git
-[submodule "roles/sublimetext"]
-	path = roles/sublimetext
-	url = git@github.com:jdauphant/ansible-role-sublimetext.git
 [submodule "roles/spotify"]
 	path = roles/spotify
 	url = git@github.com:jdauphant/ansible-role-spotify.git
