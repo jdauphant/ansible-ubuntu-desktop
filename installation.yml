@@ -38,6 +38,7 @@
        - protobuf-compiler
        - rubygems
        - ruby-dev
+       - openjdk-8-jdk
 # admin
        - openssh-server
        - nmap
@@ -77,8 +78,6 @@
          to_port: 22
          protocol: tcp
     - packaging
-    - role: java
-      java_oracle_distribution: jdk
     - scala
     - role: sudo
       sudo_files:

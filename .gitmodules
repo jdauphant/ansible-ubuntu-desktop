@@ -4,9 +4,6 @@
 [submodule "roles/packerio"]
 	path = roles/packerio
 	url = git@github.com:jdauphant/ansible-role-packerio.git
-[submodule "roles/java"]
-	path = roles/java
-	url = git@github.com:jdauphant/ansible-role-java.git
 [submodule "roles/lang"]
 	path = roles/lang
 	url = git@github.com:jdauphant/ansible-role-lang.git
